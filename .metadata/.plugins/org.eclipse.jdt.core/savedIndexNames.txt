@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+/media/sumy/办公/algs4part2/.metadata/.plugins/org.eclipse.jdt.core
+1891193769.index
+2951013295.index
