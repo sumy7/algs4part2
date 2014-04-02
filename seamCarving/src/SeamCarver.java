@@ -92,7 +92,7 @@ public class SeamCarver {
         }
 
         // 简单 dp
-        // 转移方程 f(i,j) = max( f(i+1,j),f(i+1,j+1),f(i+1,j-1) )
+        // 转移方程 f(i,j) = max( f(i+1,j),f(i+1,j+1),f(i+1,j-1) ) + energy(j,i)
         // 结果 ans = min( f(i,0) ) 0 <= i <= height-1
         // 时间复杂度 O(N^2)
         for (int j = picWidth - 2; j >= 0; j--) {
