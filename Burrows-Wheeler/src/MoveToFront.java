@@ -10,28 +10,25 @@ public class MoveToFront {
     private static final int R = 256;
 
     public static void encode() {
-        // read the input
-        String s = BinaryStdIn.readString();
-        char[] input = s.toCharArray();
-
         char[] ch = new char[R];
 
         for (int i = 0; i < R; i++) {
             ch[i] = (char) i;
         }
 
-        char tmp, tmp2;
-        for (int i = 0; i < input.length; i++) {
+        char c;
+        char j, tmp, tmp2;
+        while (!BinaryStdIn.isEmpty()) {
+            c = BinaryStdIn.readChar();
             tmp = ch[0];
-            char j;
-            for (j = 0; ch[j] != input[i]; j++) {
+            for (j = 0; ch[j] != c; j++) {
                 tmp2 = ch[j];
                 ch[j] = tmp;
                 tmp = tmp2;
             }
             ch[j] = tmp;
             BinaryStdOut.write(j);
-            ch[0] = input[i];
+            ch[0] = c;
         }
         BinaryStdOut.close();
     }
@@ -45,9 +42,10 @@ public class MoveToFront {
         }
 
         char tmp;
+        char pos;
         while (!BinaryStdIn.isEmpty()) {
             // BUG:需要读入 char 而不是 byte
-            int pos = BinaryStdIn.readChar();
+            pos = BinaryStdIn.readChar();
             for (tmp = ch[pos]; pos > 0; pos--) {
                 ch[pos] = ch[pos - 1];
             }
